@@ -1,0 +1,411 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+//@import 'sass-bootstrap/lib/bootstrap';
+
+@import 'mixins';
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+}
+
+.active {
+	color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'trump gothic east', sans-serif;
+	text-transform: uppercase;
+}
+
+//h4 {
+//	font-size: 24px;
+//	line-height: 24px;
+//	margin: 0;
+//	padding: 0;
+//}
+
+/*--------- NAV --------*/
+
+.at-inline {
+	position: relative;
+	display: inline-block;
+}
+
+.at-navbar {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	background-color: rgba(0,0,0,.75);
+	.home .at-navbar-banner .at-navbar-header {
+		width: 700px;
+		margin: 0 auto;
+		clear: both;
+	}
+	.at-navbar-banner {
+		position: relative;
+		width: 700px;
+		margin: 0 auto;
+		.at-navbar-header {
+			display: inline-block;
+			padding-right: 20px;
+			a {
+				font-family: 'trump gothic east', sans-serif;
+				font-size: 36px;
+				color: lightgrey;
+				text-transform: uppercase;
+				text-decoration: none;
+				.active {
+					color: white;
+				}
+				&:hover {
+					color: white;
+				}
+			}
+		}
+		.at-navbar-main {
+			display: inline-block;
+			a {
+				font-family: 'trump gothic east', sans-serif;
+				font-size: 24px;
+				color: lightgrey;
+				text-transform: uppercase;
+				text-decoration: none;
+				padding-right: 20px;
+				&.active {
+					color: white;
+				}
+				&:last-child {
+					padding-right: 0;
+				}
+				&:hover {
+					color: white;
+				}
+			}
+		}
+	}
+	.at-subnav {
+		width: 700px;
+		margin: 0 auto;
+		.at-navbar-subnav {
+			a {
+				font-family: 'trump gothic east', sans-serif;
+				font-size: 18px;
+				color: lightgrey;
+				text-transform: uppercase;
+				text-decoration: none;
+				padding-right: 20px;
+				&.active {
+					color: white;
+				}
+				&:last-child {
+					padding-right: 0;
+				}
+				&:hover {
+					color: white;
+				}
+			}
+		}
+	}
+}
+
+/*-------- PAGE --------*/
+
+.at-wrapper {
+	position: relative;
+}
+.at-content {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+.at-arrow-left {
+	@include nav-button(left, 62px);
+}
+.at-arrow-right {
+	@include nav-button(right, 62px);
+}
+.at-about-chevron {
+	width: 200px;
+	text-align: right;
+	@include nav-button(right, 24px);
+	h4 {
+		display: inline-block;
+		text-decoration: none;
+	}
+	img {
+		display: inline-block;
+	}
+}
+.at-arrow-down {
+	position: absolute;
+	left: 50%;
+	bottom: 0px;
+	padding-bottom: 20px;
+	margin-left: -31px;
+}
+.at-main-message {
+	position: absolute;
+	width: 700px;
+	height: 40px;
+	top: 40%;
+	left: 50%;
+	margin-left: -350px;
+	text-align: center;
+	h1 {
+		color: rgba(255, 228, 211, 1);
+		font-size: 64px;
+		text-transform: uppercase;
+	}
+}
+
+.v-centered-right {
+	position: absolute;
+	height: 20px;
+	top: 50%;
+	right: 0;
+	padding-right: 20px;
+	margin-top: -10px;
+}
+.v-centered-left {
+	position: absolute;
+	height: 20px;
+	top: 50%;
+	left: 0;
+	padding-left: 20px;
+	margin-top: -10px;
+}
+.h-centered-bottom {
+	position: absolute;
+	width: 20px;
+	left: 50%;
+	bottom: 0;
+	padding-bottom: 20px;
+	margin-left: -10px;
+}
+.at-perspective {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	perspective: 1200px;
+	transform-style: preserve-3d;
+}
+
+.at-page {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+//	visibility: hidden;
+//	backface-visibility: hidden;
+//	transform: translate3d(0, 0, 0);
+}
+
+.at-page-current,
+.no-js .at-page {
+	visibility: visible;
+}
+
+.no-js body {
+	overflow: auto;
+}
+
+.at-page-ontop {
+	z-index: 999;
+}
+
+/* animation sets */
+
+/* move from / to  */
+
+.at-page-moveToLeft {
+	-webkit-animation: moveToLeft .6s ease both;
+	-moz-animation: moveToLeft .6s ease both;
+	animation: moveToLeft .6s ease both;
+}
+
+.at-page-moveFromLeft {
+	-webkit-animation: moveFromLeft .6s ease both;
+	-moz-animation: moveFromLeft .6s ease both;
+	animation: moveFromLeft .6s ease both;
+}
+
+.at-page-moveToRight {
+	-webkit-animation: moveToRight .6s ease both;
+	-moz-animation: moveToRight .6s ease both;
+	animation: moveToRight .6s ease both;
+}
+
+.at-page-moveFromRight {
+	-webkit-animation: moveFromRight .6s ease both;
+	-moz-animation: moveFromRight .6s ease both;
+	animation: moveFromRight .6s ease both;
+}
+
+
+.at-page-moveToTop {
+	-webkit-animation: moveToTop .6s ease both;
+	-moz-animation: moveToTop .6s ease both;
+	animation: moveToTop .6s ease both;
+}
+
+.at-page-moveFromTop {
+	-webkit-animation: moveFromTop .6s ease both;
+	-moz-animation: moveFromTop .6s ease both;
+	animation: moveFromTop .6s ease both;
+}
+
+.at-page-moveToBottom {
+	-webkit-animation: moveToBottom .6s ease both;
+	-moz-animation: moveToBottom .6s ease both;
+	animation: moveToBottom .6s ease both;
+}
+
+.at-page-moveFromBottom {
+	-webkit-animation: moveFromBottom .6s ease both;
+	-moz-animation: moveFromBottom .6s ease both;
+	animation: moveFromBottom .6s ease both;
+}
+
+/********************************* keyframes **************************************/
+
+/* move from / to  */
+
+@-webkit-keyframes moveToLeft {
+	to { -webkit-transform: translateX(-100%); }
+}
+@-moz-keyframes moveToLeft {
+	to { -moz-transform: translateX(-100%); }
+}
+@keyframes moveToLeft {
+	to { transform: translateX(-100%); }
+}
+
+@-webkit-keyframes moveFromLeft {
+	from { -webkit-transform: translateX(-100%); }
+}
+@-moz-keyframes moveFromLeft {
+	from { -moz-transform: translateX(-100%); }
+}
+@keyframes moveFromLeft {
+	from { transform: translateX(-100%); }
+}
+
+@-webkit-keyframes moveToRight {
+	to { -webkit-transform: translateX(100%); }
+}
+@-moz-keyframes moveToRight {
+	to { -moz-transform: translateX(100%); }
+}
+@keyframes moveToRight {
+	to { transform: translateX(100%); }
+}
+
+@-webkit-keyframes moveFromRight {
+	from { -webkit-transform: translateX(100%); }
+}
+@-moz-keyframes moveFromRight {
+	from { -moz-transform: translateX(100%); }
+}
+@keyframes moveFromRight {
+	from { transform: translateX(100%); }
+}
+
+@-webkit-keyframes moveToTop {
+	to { -webkit-transform: translateY(-100%); }
+}
+@-moz-keyframes moveToTop {
+	to { -moz-transform: translateY(-100%); }
+}
+@keyframes moveToTop {
+	to { transform: translateY(-100%); }
+}
+
+@-webkit-keyframes moveFromTop {
+	from { -webkit-transform: translateY(-100%); }
+}
+@-moz-keyframes moveFromTop {
+	from { -moz-transform: translateY(-100%); }
+}
+@keyframes moveFromTop {
+	from { transform: translateY(-100%); }
+}
+
+@-webkit-keyframes moveToBottom {
+	to { -webkit-transform: translateY(100%); }
+}
+@-moz-keyframes moveToBottom {
+	to { -moz-transform: translateY(100%); }
+}
+@keyframes moveToBottom {
+	to { transform: translateY(100%); }
+}
+
+@-webkit-keyframes moveFromBottom {
+	from { -webkit-transform: translateY(100%); }
+}
+@-moz-keyframes moveFromBottom {
+	from { -moz-transform: translateY(100%); }
+}
+@keyframes moveFromBottom {
+	from { transform: translateY(100%); }
+}
+
+///* animation delay classes */
+//
+//.pa-page-delay100 {
+//	-webkit-animation-delay: .1s;
+//	-moz-animation-delay: .1s;
+//	animation-delay: .1s;
+//}
+//.at-page-delay180 {
+//	-webkit-animation-delay: .180s;
+//	-moz-animation-delay: .180s;
+//	animation-delay: .180s;
+//}
+//.at-page-delay200 {
+//	-webkit-animation-delay: .2s;
+//	-moz-animation-delay: .2s;
+//	animation-delay: .2s;
+//}
+//.at-page-delay300 {
+//	-webkit-animation-delay: .3s;
+//	-moz-animation-delay: .3s;
+//	animation-delay: .3s;
+//}
+//.at-page-delay400 {
+//	-webkit-animation-delay: .4s;
+//	-moz-animation-delay: .4s;
+//	animation-delay: .4s;
+//}
+//.at-page-delay500 {
+//	-webkit-animation-delay: .5s;
+//	-moz-animation-delay: .5s;
+//	animation-delay: .5s;
+//}
+//.at-page-delay700 {
+//	-webkit-animation-delay: .7s;
+//	-moz-animation-delay: .7s;
+//	animation-delay: .7s;
+//}
+//.at-page-delay1000 {
+//	-webkit-animation-delay: 1s;
+//	-moz-animation-delay: 1s;
+//	animation-delay: 1s;
+//}
